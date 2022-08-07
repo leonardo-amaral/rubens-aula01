@@ -9,3 +9,10 @@
   color: white;
   font-size: 200px
 }
+
+
+@media (max-width: 768px){
+  .LoginParte2{
+    width: 100vw
+  }
+}
