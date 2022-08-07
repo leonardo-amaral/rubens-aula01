@@ -59,6 +59,30 @@
   color: #fffff;
 }
 
+.row{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .inputs-login:focus{
   outline: none;
+}
+
+.sucesso{
+  padding: 10px; 
+  background-color: #98FB98
+}
+
+.sucesso p{
+  color: #008000;
+}
+
+.fail{
+  padding: 10px; 
+  background-color: #FA8072
+}
+
+.fail p{
+  color: 	#8B0000
 }

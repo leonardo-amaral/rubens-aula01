@@ -9,6 +9,8 @@ function Login() {
 
   const [emailSucces, setEmailSucess] = useState(false)
   const [passwordSucces, setPasswordSucess] = useState(false)
+  const [render, setRender] = useState(false)
+  const [fail, setFail] = useState(false)
 
 
 
@@ -19,7 +21,7 @@ function Login() {
     email: 'rubens@gmail.com',
     password: '123456'
   }
-
+  localStorage.setItem('Database', JSON.stringify(Database))
   // const Router = useHistory()
 
   function verfiedLogin() {
@@ -37,14 +39,29 @@ function Login() {
     }
 
     if (emailSucces && passwordSucces === true) {
-      Router.push('https://www.google.com/')
+      setRender(true)
+    } else {
+      setFail(true)
     }
   }
 
   return (
     <div className='login'>
       <div className='container'>
-        <h1 className='titulo'>Aula 01</h1>
+        <div className='row'>
+          <h1 className='titulo'>Facebook</h1>
+          {
+            render ? (
+              <div className='sucesso'>
+                <p>Login efetuado com sucesso!</p>
+              </div>
+            ) : fail ? (
+              <div className='fail'>
+                <p>Credenciais invalidas!</p>
+              </div>
+            ) : null
+          }
+        </div>
         <div className='inputs'>
           <div className='email'>
             <p className='p'>Email :</p>
